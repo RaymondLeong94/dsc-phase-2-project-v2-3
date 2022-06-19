@@ -27,7 +27,7 @@ Throughout my EDA I have encountered questions (hypotheses) such as: Does having
 
 #### Links
 
-* [Link to Notebook]
+* [Link to Notebook] https://github.com/RaymondLeong94/dsc-phase-2-project-v2-3/blob/main/data/Phase%202%20Project%20RL%20.ipynb
 * [Link to presentation] https://github.com/RaymondLeong94/dsc-phase-2-project-v2-3/blob/main/Impact%20of%20Internal%20and%20External%20Factors%20of%20Houses%20Final.pdf
 
 
