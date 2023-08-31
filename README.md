@@ -3,6 +3,15 @@
 ## Project Overview
 In this project, we are focused on creating a multilinear regression model after exploratory data analysis. Throughout our exploratory data anaylsis we found several factors that influence the price, thus these factors were selected and delinated into external versus internal. We used squarefoot living space as our first continuous variable followed by OHE variables such as Grade, Condition, View etc.
 
+## Installation
+* Requirement.text can be installed through the anaconda prompt for recreating the venv.
+* Streamlit is still under construction.
+* [Dataset] https://www.kaggle.com/datasets/harlfoxem/housesalesprediction
+
+## * Streamlit 
+![Alt text](image.png)
+First Version
+
 ### Business Problem
 The housing bubble is about to pop and I am working with a real estate company to help identify profitable houses to purchase and easily resell. This project helps to create weights for certain attributes of the house, such as squarefoot living space, waterfront presence etc. The coefficients are the weight of the influence a factor has on price (our target variable). Ideally, we would be able to want an umbrella view of all the coefficients, which then can give us an insight on whether a house is overvalued or undervalued.
 
@@ -85,3 +94,5 @@ Throughout my EDA I have encountered questions (hypotheses) such as: Does having
 
 ### Commit History 
 * First commit was the final draft of the project
+* The following commits are made to enhance the project contents. 
+  * V.0 of streamlit deployed on 31082023
