@@ -7,6 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import linear_model
+from sklearn.metrics import r2_score
 
 #title
 st.title("""App for Housing Price Prediction Based on *Features* """)
@@ -71,8 +72,8 @@ st.write(df)
 st.write('---')
 
 #model 
-Y = data["price_log"]
-X = data[["sqft_living", 
+y = data["price_log"]
+x = data[["sqft_living", 
 "sqft_living15", 
 "sqft_lot15_new_log",
 'condition_Fair',
@@ -93,17 +94,28 @@ X = data[["sqft_living",
 
 #scale
 sc = StandardScaler()
-X = sc.fit_transform(X)
+X = sc.fit_transform(x)
+
+#tts
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y,random_state = 0,test_size=0.25)
 
 #train test split
-regr = linear_model.LinearRegression().fit(X,Y)
+regr = linear_model.LinearRegression().fit(X_train,y_train)
 #make y_pred = to predicting the x trained variables 
-y_pred = regr.predict(df)
-#model predictions based on notebook 
-#model = pickle.load(open('final_model.pkl', 'rb'))
-#predict
+y_pred = regr.predict(X_train)
+#
+prediction = regr.predict(df)
 
 st.header('Prediction of Log(Price)')
-st.write(y_pred)
+st.write(prediction)
 st.write('---')
 
+#model predictions based on notebook 
+#model = pickle.load(open('final_model.pkl', 'rb'))
+
+
+#R^2 value
+st.header('Explained variance')
+st.write("The R squared value: {}".format(r2_score(y_true=y_train,y_pred=y_pred)))
+st.write('---')
